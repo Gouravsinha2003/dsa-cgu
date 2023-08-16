@@ -20,7 +20,7 @@ int main() {
   }
   mean = sum / n;
 
-  
+
   float variance = 0.0;
   for (int i = 0; i < n; i++) {
     variance += (arr[i] - mean) * (arr[i] - mean);
@@ -36,5 +36,3 @@ int main() {
 
   return 0;
 }
-
-
