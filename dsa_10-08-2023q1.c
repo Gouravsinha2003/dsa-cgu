@@ -1,38 +1,40 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main(){
   int n;
-  float mean, sd, sum = 0.0;
-  float arr[100];
+  int xi;
+  float x = 0.0;
+  float variance;
+  float sd;
+  float sum = 0.0;
 
-  printf("Enter the number of elements: ");
+  printf("Number of elements to be entered :");
   scanf("%d", &n);
 
-  printf("Enter the elements: ");
-  for (int i = 0; i < n; i++) {
-    scanf("%f", &arr[i]);
+  int arr1[n];
+
+  for (int i = 0; i<n; i++)
+  {
+      printf("enter number :");
+      scanf("%d", &arr1[i]);
+
+      xi = arr1[i];
+      x = x+xi;
   }
 
-  
-  for (int i = 0; i < n; i++) {
-    sum += arr[i];
+  x = x/n;
+
+  for(int i= 0; i < n; i++)
+  {
+    xi = arr1[i];
+    sum += pow(xi-x,2);
   }
-  mean = sum / n;
 
+  variance = sum/(n-1);
+  sd = pow(variance, 0.5);
 
-  float variance = 0.0;
-  for (int i = 0; i < n; i++) {
-    variance += (arr[i] - mean) * (arr[i] - mean);
-  }
-  variance /= n;
-
-  
-  sd = sqrt(variance);
-
-  
-  printf("Mean: %.2f\n", mean);
-  printf("Standard deviation: %.2f\n", sd);
+  printf("\nMean = %f\nVariance = %f\nStandard deviation = %f", x, variance, sd);
 
   return 0;
 }
