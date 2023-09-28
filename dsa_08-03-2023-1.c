@@ -2,11 +2,11 @@
 
 int main(){
     float avg = 0;
-    int array[10]; // Declaration of array
+    int array[10]; 
 
     for (int i = 0; i < 10; i++)
     {
-        scanf("%d", &array[i]); // Insertion of data in array
+        scanf("%d", &array[i]); 
         avg+=array[i];
     }
 
